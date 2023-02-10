@@ -31,6 +31,7 @@ const Dashboard = () => {
       data.user.email,
       { redirectTo: `${process.env.BASE_URl}/change-pass` }
     )
+    console.log(`${process.env.BASE_URl}/change-pass`);
     if (!error) {
       alert("Email đổi mật khẩu đã được gửi về mail của bạn!")
 
