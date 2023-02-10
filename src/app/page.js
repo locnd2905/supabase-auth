@@ -12,7 +12,7 @@ const Dashboard = () => {
     process.env.NEXT_PUBLIC_ANON
   );
   useEffect(() => {
-    
+
     const checkSession = async () => {
       const { data } = await supabase.auth.getSession();
       if (data.session) {
@@ -28,7 +28,7 @@ const Dashboard = () => {
   const changePass = async (values) => {
     const { data } = await supabase.auth.getUser()
     const { error } = await supabase.auth.resetPasswordForEmail(
-      dataUser.user.email,
+      data.user.email,
       { redirectTo: `${process.env.BASE_URl}/change-pass` }
     )
     if (!error) {
