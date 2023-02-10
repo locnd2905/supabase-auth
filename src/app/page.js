@@ -29,9 +29,8 @@ const Dashboard = () => {
     const { data } = await supabase.auth.getUser()
     const { error } = await supabase.auth.resetPasswordForEmail(
       data.user.email,
-      { redirectTo: `${process.env.BASE_URl}/change-pass` }
+      { redirectTo: `https://supabase-auth.herokuapp.com/change-pass` }
     )
-    console.log(`${process.env.BASE_URl}/change-pass`);
     if (!error) {
       alert("Email đổi mật khẩu đã được gửi về mail của bạn!")
 
