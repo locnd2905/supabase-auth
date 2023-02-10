@@ -12,6 +12,7 @@ const Dashboard = () => {
     process.env.NEXT_PUBLIC_ANON
   );
   useEffect(() => {
+    
     const checkSession = async () => {
       const { data } = await supabase.auth.getSession();
       if (data.session) {
