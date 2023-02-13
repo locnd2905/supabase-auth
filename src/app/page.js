@@ -25,11 +25,13 @@ const Dashboard = () => {
     await supabase.auth.signOut()
   }
   const changePass = async (values) => {
+    const redirectUrl = 'https://supabase-auth.herokuapp.com/change-pass'
     const { data } = await supabase.auth.getUser()
     const { error } = await supabase.auth.resetPasswordForEmail(
       data.user.email,
-      { redirectTo: 'https://supabase-auth.herokuapp.com/change-pass' }
+      { redirectTo: redirectUrl }
     )
+    console.log(redirectUrl);
     if (!error) {
       alert("Email đổi mật khẩu đã được gửi về mail của bạn!")
 
