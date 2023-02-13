@@ -36,6 +36,7 @@ const Dashboard = () => {
       data.user.email,
       { redirectTo: getURL() }
     )
+    console.log(getURL);
     if (!error) {
       alert("Email đổi mật khẩu đã được gửi về mail của bạn!")
 
