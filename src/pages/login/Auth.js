@@ -34,7 +34,6 @@ const AuthUI = () => {
                 supabaseClient={supabase}
                 appearance={{ theme: ThemeSupa }}
                 theme="light"
-                providers={['google', 'facebook', 'twitter']}
                 view="sign_in"
             />
         </div>

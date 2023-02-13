@@ -32,6 +32,7 @@ const Dashboard = () => {
     )
     if (!error) {
       alert("Email đổi mật khẩu đã được gửi về mail của bạn!")
+
     }
   };
   return (

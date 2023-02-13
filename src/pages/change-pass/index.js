@@ -23,7 +23,6 @@ export default function changePass() {
                 }
                 if (error) {
                     alert("There was an error updating your password.")
-                    return router.push("/login");
                 }
             }
         })
