@@ -12,7 +12,6 @@ const Dashboard = () => {
     process.env.NEXT_PUBLIC_ANON
   );
   useEffect(() => {
-
     const checkSession = async () => {
       const { data } = await supabase.auth.getSession();
       if (data.session) {
@@ -29,7 +28,7 @@ const Dashboard = () => {
     const { data } = await supabase.auth.getUser()
     const { error } = await supabase.auth.resetPasswordForEmail(
       data.user.email,
-      { redirectTo: `https://supabase-auth.herokuapp.com/change-pass` }
+      { redirectTo: 'https://supabase-auth.herokuapp.com/change-pass' }
     )
     if (!error) {
       alert("Email đổi mật khẩu đã được gửi về mail của bạn!")
