@@ -34,7 +34,7 @@ const Dashboard = () => {
     const { data } = await supabase.auth.getUser()
     const { error } = await supabase.auth.resetPasswordForEmail(
       data.user.email,
-      { redirectTo: getURL() }
+      { redirectTo: `${getURL()}/changePass` }
     )
     console.log(getURL);
     if (!error) {
