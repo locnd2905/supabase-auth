@@ -34,9 +34,8 @@ const Dashboard = () => {
     const { data } = await supabase.auth.getUser()
     const { error } = await supabase.auth.resetPasswordForEmail(
       data.user.email,
-      { redirectTo: `${getURL()}/changePass` }
+      { redirectTo: `${getURL()}/change-pass` }
     )
-    console.log(getURL);
     if (!error) {
       alert("Email đổi mật khẩu đã được gửi về mail của bạn!")
 
