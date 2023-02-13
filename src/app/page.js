@@ -24,14 +24,18 @@ const Dashboard = () => {
   const logout = async () => {
     await supabase.auth.signOut()
   }
+  const getURL = () => {
+    let url =
+      process?.env?.NEXT_PUBLIC_SITE_URL 
+    url = url.charAt(url.length - 1) === '/' ? url : `${url}/`;
+    return url;
+  };
   const changePass = async (values) => {
-    const redirectUrl = 'https://supabase-auth.herokuapp.com/change-pass'
     const { data } = await supabase.auth.getUser()
     const { error } = await supabase.auth.resetPasswordForEmail(
       data.user.email,
-      { redirectTo: redirectUrl }
+      { redirectTo: getURL() }
     )
-    console.log(redirectUrl);
     if (!error) {
       alert("Email đổi mật khẩu đã được gửi về mail của bạn!")
 
