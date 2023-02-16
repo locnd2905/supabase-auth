@@ -20,7 +20,7 @@ const AuthUI = () => {
             }
         };
         checkSession();
-    });
+    },[]);
 
     supabase.auth.onAuthStateChange((event) => {
         if (event == "SIGNED_IN") {

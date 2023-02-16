@@ -18,11 +18,9 @@ export default function changePass() {
                 })
                 if (data) {
                     alert("Password updated successfully!")
-                    await supabase.auth.signOut()
-                    return router.push("/login");
+                    return router.push("/");
                 }
                 if (error) {
-
                     return alert("There was an error updating your password.")
                 }
             }
